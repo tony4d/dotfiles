@@ -1,0 +1,20 @@
+[user]
+	name = Tony Ford
+	email = tony4d@gmail.com
+[core]
+	excludesfile = /Users/tford/.gitignore
+	autocrlf = input
+[merge]
+	tool = p4merge
+[mergetool]
+	keepBackup = false
+[mergetool "p4merge"]
+	trustExitCode = false
+	cmd = /Applications/p4merge.app/Contents/Resources/launchp4merge $PWD/$BASE $PWD/$REMOTE $PWD/$LOCAL $PWD/$MERGED
+[alias]
+	co = checkout
+	s = status
+[diff]
+	tool = p4merge
+[difftool "p4merge"]
+        cmd = /Applications/p4merge.app/Contents/Resources/launchp4merge $LOCAL $REMOTE
