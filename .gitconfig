@@ -13,7 +13,9 @@
 	cmd = /Applications/p4merge.app/Contents/Resources/launchp4merge $PWD/$BASE $PWD/$REMOTE $PWD/$LOCAL $PWD/$MERGED
 [alias]
 	co = checkout
+	ci = commit
 	s = status
+	b = branch
 [diff]
 	tool = p4merge
 [difftool "p4merge"]
