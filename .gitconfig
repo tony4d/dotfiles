@@ -2,8 +2,9 @@
 	name = Tony Ford
 	email = tony4d@gmail.com
 [core]
-	excludesfile = /Users/tford/.gitignore
+	excludesfile = ~/.gitignore
 	autocrlf = input
+	editor = vim
 [merge]
 	tool = p4merge
 [mergetool]
@@ -19,4 +20,19 @@
 [diff]
 	tool = p4merge
 [difftool "p4merge"]
-        cmd = /Applications/p4merge.app/Contents/Resources/launchp4merge $LOCAL $REMOTE
+    cmd = /Applications/p4merge.app/Contents/Resources/launchp4merge $LOCAL $REMOTE
+[color]
+	ui = true
+	diff = true
+	grep = true
+	branch = true
+	showbranch = true
+	status = true
+[color "status"]
+    header = normal dim
+    added = yellow
+    untracked = magenta
+[color "branch"]
+    current = yellow reverse
+    local = yellow
+    remote = red
