@@ -1,33 +1,33 @@
 [user]
-	name = Tony Ford
-	email = tony4d@gmail.com
+    name = Tony Ford
+    email = tony4d@gmail.com
 [core]
-	excludesfile = ~/.gitignore
-	autocrlf = input
-	editor = vim
+    excludesfile = ~/.gitignore
+    autocrlf = input
+    editor = vim
 [merge]
-	tool = p4merge
+    tool = p4merge
 [mergetool]
-	keepBackup = false
+    keepBackup = false
 [mergetool "p4merge"]
-	trustExitCode = false
-	cmd = /Applications/p4merge.app/Contents/Resources/launchp4merge $PWD/$BASE $PWD/$REMOTE $PWD/$LOCAL $PWD/$MERGED
+    trustExitCode = false
+    cmd = /Applications/p4merge.app/Contents/Resources/launchp4merge $PWD/$BASE $PWD/$REMOTE $PWD/$LOCAL $PWD/$MERGED
 [alias]
-	co = checkout
-	ci = commit
-	s = status
-	b = branch
+    co = checkout
+    ci = commit
+    s = status
+    b = branch
 [diff]
-	tool = p4merge
+    tool = p4merge
 [difftool "p4merge"]
     cmd = /Applications/p4merge.app/Contents/Resources/launchp4merge $LOCAL $REMOTE
 [color]
-	ui = true
-	diff = true
-	grep = true
-	branch = true
-	showbranch = true
-	status = true
+    ui = true
+    diff = true
+    grep = true
+    branch = true
+    showbranch = true
+    status = true
 [color "status"]
     header = normal dim
     added = yellow
