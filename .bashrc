@@ -16,14 +16,17 @@ export PS1="\[\033[0;35m\]\u\[\033[00m\]\
 \[\033[0;36m\]\$(bash_git_branch)\[\033[00m\]\
 \[\033[0;32m\]\$\[\033[00m\] "
 
-# Gotta have brew :)
-if [ -f `brew --prefix`/etc/bash_completion ]; then
-  . `brew --prefix`/etc/bash_completion
+# OS X only stuff
+if uname -a | grep -q Darwin; then
+    # Gotta have brew :)
+    if [ -f `brew --prefix`/etc/bash_completion ]; then
+      . `brew --prefix`/etc/bash_completion
+    fi
+
+    # Load Python virtualenvwrapper
+    export WORKON_HOME=$HOME/.virtualenvs
+    source /usr/local/bin/virtualenvwrapper.sh
+
+    #Load Ruby rvm
+    [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 fi
-
-# Load Python virtualenvwrapper
-export WORKON_HOME=$HOME/.virtualenvs
-source /usr/local/bin/virtualenvwrapper.sh
-
-#Load Ruby rvm
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
