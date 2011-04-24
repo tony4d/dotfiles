@@ -16,8 +16,18 @@ export PS1="\[\033[0;35m\]\u\[\033[00m\]\
 \[\033[0;36m\]\$(bash_git_branch)\[\033[00m\]\
 \[\033[0;32m\]\$\[\033[00m\] "
 
-# OS X only stuff
+# Linux schtuff
+if uname -a | grep -q Linux; then
+    # aliases
+    alias ls='ls --color=tty'
+fi
+
+# OS X schtuff
 if uname -a | grep -q Darwin; then
+    # OooOOo purty colors
+    export CLICOLOR=1
+    export LSCOLORS=xEGxcxdxbxegedabagacad
+
     # Gotta have brew :)
     if [ -f `brew --prefix`/etc/bash_completion ]; then
       . `brew --prefix`/etc/bash_completion
