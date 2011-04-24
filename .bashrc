@@ -20,6 +20,7 @@ export PS1="\[\033[0;35m\]\u\[\033[00m\]\
 if uname -a | grep -q Linux; then
     # aliases
     alias ls='ls --color=tty'
+    eval `dircolors -b ~/.dircolors`
 fi
 
 # OS X schtuff
