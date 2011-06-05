@@ -2,7 +2,6 @@ PATH=$HOME/bin:$PATH
 PATH=$PATH:/usr/local/sbin
 PATH=$PATH:/usr/local/bin
 EDITOR=vi
-export PATH EDITOR
 
 # Put together a nice looking prompt
 function bash_git_branch
@@ -21,6 +20,8 @@ if uname -a | grep -q Linux; then
     # aliases
     alias ls='ls --color=tty'
     eval `dircolors -b ~/.dircolors`
+    PATH=$PATH:/usr/local/php/bin
+    PATH=$PATH:/usr/local/mysql/bin
 fi
 
 # OS X schtuff
@@ -41,3 +42,5 @@ if uname -a | grep -q Darwin; then
     #Load Ruby rvm
     [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 fi
+
+export PATH EDITOR
