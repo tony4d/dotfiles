@@ -1,6 +1,5 @@
-PATH=$HOME/bin:$PATH
-PATH=$PATH:/usr/local/sbin
-PATH=$PATH:/usr/local/bin
+# Make sure things like ~/bin and /usr/local/bin are at the beginning
+PATH=$HOME/bin:/usr/local/bin:/usr/local/sbin:$PATH
 EDITOR=vi
 
 # Put together a nice looking prompt
@@ -35,9 +34,11 @@ if uname -a | grep -q Darwin; then
       . `brew --prefix`/etc/bash_completion
     fi
 
-    # Load Python virtualenvwrapper
-    export WORKON_HOME=$HOME/.virtualenvs
-    source /usr/local/bin/virtualenvwrapper.sh
+    # Gotta have pythonbrew
+    [ -f "$HOME/.pythonbrew/etc/bashrc" ] && source "$HOME/.pythonbrew/etc/bashrc"
+    # leave out virtualenv stuff for now
+    #export WORKON_HOME=$HOME/.virtualenvs
+    #source /usr/local/bin/virtualenvwrapper.sh
 
     #Load Ruby rvm
     [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
