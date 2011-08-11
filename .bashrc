@@ -1,5 +1,5 @@
 # Make sure things like ~/bin and /usr/local/bin are at the beginning
-PATH=$HOME/bin:/usr/local/bin:/usr/local/sbin:$PATH
+PATH=$HOME/bin:/usr/local/bin:/usr/local/sbin:$PATH:/sbin:/usr/sbin
 EDITOR=vi
 
 # Put together a nice looking prompt
