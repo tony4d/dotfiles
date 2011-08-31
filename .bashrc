@@ -34,6 +34,10 @@ if uname -a | grep -q Darwin; then
       . `brew --prefix`/etc/bash_completion
     fi
 
+    # Local node js
+    PATH=$PATH:$HOME/local/node/bin
+    NODE_PATH=$HOME/local/node:$HOME/local/node/lib/node_modules
+
     # Gotta have pythonbrew
     [ -f "$HOME/.pythonbrew/etc/bashrc" ] && source "$HOME/.pythonbrew/etc/bashrc"
     # leave out virtualenv stuff for now
