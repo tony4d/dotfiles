@@ -29,23 +29,16 @@ if uname -a | grep -q Darwin; then
     export CLICOLOR=1
     export LSCOLORS=HEGxcxdxbxegedabagacad
 
-    # Gotta have brew :)
-    if [ -f `brew --prefix`/etc/bash_completion ]; then
-      . `brew --prefix`/etc/bash_completion
-    fi
-
-    # Local node js
+    # bash completion
+    [ -f `brew --prefix`/etc/bash_completion ] && . `brew --prefix`/etc/bash_completion
+    # python
+    [ -f "$HOME/.pythonbrew/etc/bashrc" ] && . "$HOME/.pythonbrew/etc/bashrc"
+    # ruby
+    [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
+    # Local node
     PATH=$PATH:$HOME/local/node/bin
     NODE_PATH=$HOME/local/node:$HOME/local/node/lib/node_modules
-
-    # Gotta have pythonbrew
-    [ -f "$HOME/.pythonbrew/etc/bashrc" ] && source "$HOME/.pythonbrew/etc/bashrc"
-    # leave out virtualenv stuff for now
-    #export WORKON_HOME=$HOME/.virtualenvs
-    #source /usr/local/bin/virtualenvwrapper.sh
-
-    #Load Ruby rvm
-    [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 fi
 
 export PATH EDITOR
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
