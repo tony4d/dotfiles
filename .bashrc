@@ -27,7 +27,7 @@ fi
 if uname -a | grep -q Darwin; then
     # OooOOo purty colors
     export CLICOLOR=1
-    export LSCOLORS=xEGxcxdxbxegedabagacad
+    export LSCOLORS=HEGxcxdxbxegedabagacad
 
     # Gotta have brew :)
     if [ -f `brew --prefix`/etc/bash_completion ]; then
