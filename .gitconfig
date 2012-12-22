@@ -6,10 +6,10 @@
     autocrlf = input
     editor = vim
 [merge]
-    tool = p4merge
+    tool = p4mergetool
 [mergetool]
     keepBackup = false
-[mergetool "p4merge"]
+[mergetool "p4mergetool"]
     trustExitCode = false
     cmd = /Applications/p4merge.app/Contents/Resources/launchp4merge $PWD/$BASE $PWD/$REMOTE $PWD/$LOCAL $PWD/$MERGED
 [alias]
@@ -18,8 +18,8 @@
     s = status
     b = branch
 [diff]
-    tool = p4merge
-[difftool "p4merge"]
+    tool = p4mergetool
+[difftool "p4mergetool"]
     cmd = /Applications/p4merge.app/Contents/Resources/launchp4merge $LOCAL $REMOTE
 [color]
     ui = true

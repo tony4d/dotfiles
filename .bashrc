@@ -1,5 +1,7 @@
-# Make sure things like ~/bin and /usr/local/bin are at the beginning
-PATH=$HOME/bin:/usr/local/bin:/usr/local/sbin:$PATH:/sbin:/usr/sbin
+PATH=$HOME/bin:/usr/local/bin:/usr/local/sbin:$PATH             # Homedir and local first
+PATH=$PATH:/sbin:/usr/sbin                                      # I want sbin there too
+PATH=$PATH:$HOME/.rvm/bin                                       # rvm for scripting
+PATH=$PATH:/usr/local/share/npm/bin                             # npm for hipstering
 EDITOR=vi
 
 # Put together a nice looking prompt
@@ -40,5 +42,4 @@ if uname -a | grep -q Darwin; then
     NODE_PATH=$HOME/local/node:$HOME/local/node/lib/node_modules
 fi
 
-export PATH EDITOR
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+export PATH NODE_PATH EDITOR
