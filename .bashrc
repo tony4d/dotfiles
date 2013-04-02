@@ -1,8 +1,9 @@
-PATH=$HOME/bin:/usr/local/bin:/usr/local/sbin:$PATH             # Homedir and local first
-PATH=$PATH:/sbin:/usr/sbin                                      # I want sbin there too
-PATH=$PATH:$HOME/.rvm/bin                                       # rvm for scripting
-PATH=$PATH:/usr/local/share/npm/bin                             # npm for hipstering
+PATH=/usr/local/bin:/usr/local/sbin:$PATH                # Locals in front
+PATH=$HOME/.rbenv/shims:$HOME/bin:$PATH                  # Shims and homedir always first
+PATH=$PATH:/sbin:/usr/sbin                               # I want sbin there too
+PATH=$PATH:/usr/local/share/npm/bin                      # npm for hipstering
 EDITOR=vi
+set -o vi
 
 # Put together a nice looking prompt
 function bash_git_branch
@@ -34,9 +35,10 @@ if uname -a | grep -q Darwin; then
     # bash completion
     [ -f `brew --prefix`/etc/bash_completion ] && . `brew --prefix`/etc/bash_completion
     # python
-    [ -f "$HOME/.pythonbrew/etc/bashrc" ] && . "$HOME/.pythonbrew/etc/bashrc"
+	[[ -s $HOME/.pythonz/etc/bashrc ]] && source $HOME/.pythonz/etc/bashrc
+	[ -f /usr/local/bin/virtualenvwrapper.sh ] && source /usr/local/bin/virtualenvwrapper.sh
     # ruby
-    [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
+    if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
     # Local node
     PATH=$PATH:$HOME/local/node/bin
     NODE_PATH=$HOME/local/node:$HOME/local/node/lib/node_modules
