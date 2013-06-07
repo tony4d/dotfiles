@@ -3,3 +3,6 @@
 
 # Compiled python
 *.pyc
+
+# Eclipse stuff
+*eclipsebin*
