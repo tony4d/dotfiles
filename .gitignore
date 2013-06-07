@@ -1,5 +1,5 @@
 #### OS generated noise
-.DS_Store?
+.DS_Store*
 
 # Compiled python
 *.pyc
