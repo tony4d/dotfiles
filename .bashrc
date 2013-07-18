@@ -3,6 +3,7 @@ PATH=$HOME/.rbenv/shims:$HOME/bin:$PATH                  # Shims and homedir alw
 PATH=$PATH:/sbin:/usr/sbin                               # I want sbin there too
 PATH=$PATH:/usr/local/share/npm/bin                      # npm for hipstering
 alias json='python -mjson.tool'
+alias ju='sudo -ujposuser'
 EDITOR=vi
 set -o vi
 
