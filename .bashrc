@@ -1,5 +1,5 @@
 PATH=/usr/local/bin:/usr/local/sbin:$PATH                # Locals in front
-PATH=$HOME/.rbenv/shims:$HOME/bin:$PATH                  # Shims and homedir always first
+PATH=$HOME/.rbenv/bin:$HOME/bin:$PATH                    # Shims and homedir always first
 PATH=$PATH:/sbin:/usr/sbin                               # I want sbin there too
 PATH=$PATH:/usr/local/share/npm/bin                      # npm for hipstering
 alias json='python -mjson.tool'
