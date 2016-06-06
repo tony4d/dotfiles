@@ -4,6 +4,8 @@ PATH=$PATH:/sbin:/usr/sbin                               # I want sbin there too
 PATH=$PATH:/usr/local/share/npm/bin                      # npm for hipstering
 alias json='python -mjson.tool'
 alias ju='sudo -ujposuser'
+alias ant-tests-v3api='ant -Denv=dev test-v3api'
+alias guid='uuidgen | awk "{print tolower($1)}"'
 EDITOR=vi
 set -o vi
 
@@ -43,7 +45,8 @@ if uname -a | grep -q Darwin; then
     if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
     # Local node
     PATH=$PATH:$HOME/local/node/bin
-    NODE_PATH=$HOME/local/node:$HOME/local/node/lib/node_modules
+    NODE_PATH=$HOME/local/node:$HOME/local/node/lib/node_modules:/usr/local/lib/node_modules
+    JAVA_HOME=$(/usr/libexec/java_home)
 fi
 
-export PATH NODE_PATH EDITOR
+export PATH NODE_PATH EDITOR JAVA_HOME
