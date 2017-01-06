@@ -6,6 +6,7 @@ alias json='python -mjson.tool'
 alias ju='sudo -ujposuser'
 alias ant-tests-v3api='ant -Denv=dev test-v3api'
 alias guid='uuidgen | awk "{print tolower($1)}"'
+alias gitfilediff='git --no-pager log --stat --name-only $1'
 EDITOR=vi
 set -o vi
 
@@ -35,6 +36,9 @@ if uname -a | grep -q Darwin; then
     # OooOOo purty colors
     export CLICOLOR=1
     export LSCOLORS=HEGxcxdxbxegedabagacad
+
+    # Init jenv
+    if which jenv > /dev/null; then eval "$(jenv init -)"; fi
 
     # bash completion
     [ -f `brew --prefix`/etc/bash_completion ] && . `brew --prefix`/etc/bash_completion
