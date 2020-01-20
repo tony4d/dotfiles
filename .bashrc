@@ -1,3 +1,4 @@
+export BASH_SILENCE_DEPRECATION_WARNING=1                # You can pry bash from my cold dead hands
 PATH=/usr/local/bin:/usr/local/sbin:$PATH                # Locals in front
 PATH=$HOME/.rbenv/bin:$HOME/bin:$PATH                    # Shims and homedir always first
 PATH=$PATH:/sbin:/usr/sbin                               # I want sbin there too
